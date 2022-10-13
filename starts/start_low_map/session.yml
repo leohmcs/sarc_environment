@@ -22,6 +22,13 @@ windows:
       panes:
         # uav 1
         - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/pos/pos1.yaml"
+        # uav 2
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "2 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/pos/pos2.yaml"
+        # uav 3
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "3 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/pos/pos3.yaml"
+        # uav 4
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "4 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/pos/pos4.yaml"
+
   - control:
       layout: tiled
       panes:
@@ -30,4 +37,10 @@ windows:
       layout: tiled
       panes:
         # uav 1
-        - waitForRos; rosrun sarc_environment fall.py
+        - waitForRos; rosrun sarc_environment fall.py 1
+        # uav 2
+        - waitForRos; rosrun sarc_environment fall.py 2
+        # uav 3
+        - waitForRos; rosrun sarc_environment fall.py 3
+        # uav 4
+        - waitForRos; rosrun sarc_environment fall.py 4
